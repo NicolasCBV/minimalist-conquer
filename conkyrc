@@ -1,0 +1,44 @@
+conky.config = {
+    alignment = 'top_middle',
+    border_width = 20,
+
+    max_text_width = 75,
+    maximum_width = 600,
+
+    gap_y = 120,
+
+    default_color = '#D25954',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+
+    double_buffer = true,
+
+    draw_outline = false,
+    draw_shades = false,
+
+    font = 'Hack Nerd Font:style=Regular:size=12',
+
+    minimum_height = 10,
+    minimum_width = 10,
+
+    border_inner_margin	= 20,
+
+    net_avg_samples = 2,
+    no_buffers = true,
+
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'desktop',
+
+    update_interval = 1.0,
+    use_xft = true,
+}
+
+
+conky.text = [[
+${font Dune Rise:style=Regular:size=48}${alignc}${time %#A}${font}
+${font Hack Nerd Font:style=Regular:size=15}${voffset 15}${color white}${alignc}${execi 1800 sh ~/.config/conky/scripts/weather.sh}    󰀠 ${time %I:%M%#p}${font}
+${font Hack Nerd Font:style=Regular:size=12}${voffset 5}${alignc}${color white}${execi 1800 ~/.config/conky/build/bin}${font}
+]]
+
