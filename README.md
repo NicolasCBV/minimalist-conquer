@@ -1,4 +1,4 @@
-# SIMPLE CONKY THEME
+# Minimalist Conquer
 This is a simple conky theme, if you are curiosity to check how it are, check this example:
 
 <img alt="demonstration image" src="./example.png">
@@ -6,11 +6,12 @@ This is a simple conky theme, if you are curiosity to check how it are, check th
 ## Dependencies
 Actually this repository is totally personal and all dependencies need to be installed manually.
 
-- Font: Hack Nerd Font (is in directory "fonts") and Dune Rise
-- jq: JSON command line processor
-- bc: an arbitrary precision calculator language
+- lua-utf8: used in upper case process conversion
+- lua-dkjson: used in json file parsing
 
-## Usage
-Run ```install.sh``` bash script and insert your Open Weather API key, this will save your credential in a text file called ```cred.json``` inside conky directory. Besides that, just guarantee the conky process execution in your device.
+## Installation
+Run ```make``` to install this theme in your device, this will set crons for continuous executions every 15 minutes and every boot, to change your Open Weather API key, please edit ```/etc/minimalist_conquer/cred.json```.
 
-After that, insert the /fonts/Hack Regular Nerd Font Complete.ttf in /usr/share/fonts/ and start conky with the conkyrc
+> Note: you can collect cached weather data for another usage through ```/tmp/weather.json```.
+
+> Note: to uninstall this theme, just run ```./uninstall.sh```, this will disable crons and remove your credencials.
