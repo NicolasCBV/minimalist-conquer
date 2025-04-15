@@ -23,22 +23,20 @@ fi
 json="{\"api_key\": \"${key}\"}"
 printf '%b' $json | sudo tee -a $file > /dev/null
 
-printf '%b' "\nSetting cron job for Open Weather...\n"
+printf '%b' "\nSetting cron job and daemon for Open Weather...\n"
 executor_path=$HOME/.config/conky/scripts/cron/executor.sh
-boot_cron_list=/etc/cron.reboot
-boot_cron_path=$boot_cron_list/weather
+sudo cp $executor_path /usr/bin/weather.collect
+final_executor_path=/usr/bin/weather.collect
 
-if [ ! -d $boot_cron_list ]; then
-	sudo mkdir $boot_cron_list
+crontab -l | grep -v "$final_executor_path" | crontab -
+(crontab -l ; echo "*/15 * * * * $final_executor_path") | crontab
+
+sudo cp $script_dir/scripts/daemon/service.conf /etc/systemd/system/weather-daemon.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now weather-daemon.service
+
+if [ $(($?)) -ne 0 ]; then
+	printf '%b' "\nCould not run first execution, please check your network connection and your API key!\n"
+	exit 1
 fi
-
-if [ -f $boot_cron_path ]; then
-	sudo rm $boot_cron_path
-fi
-
-sudo ln $executor_path $boot_cron_path
-
-crontab -l | grep -v "$boot_cron_path" | crontab -
-(crontab -l ; echo "*/15 * * * * $boot_cron_path") | crontab
-
 printf '%b' "\nEverything is ready to be used!\n"

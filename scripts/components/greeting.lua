@@ -9,7 +9,7 @@ function Draw_greeting(cr)
         elseif hour < 12 then
             msg = "Bom dia, " .. username .. "!"
         elseif hour < 18 then
-            msg = "Boa tarfe, " .. username .. "!"
+            msg = "Boa tarde, " .. username .. "!"
         else
             msg = "Boa noite, " .. username .. "!"
         end

@@ -5,6 +5,11 @@ end
 
 function Get_weather_data()
     local file = io.open("/tmp/weather.json")
+    if not file then
+        print("ERROR: Could not read cached file for weather data!")
+        return nil
+    end
+
     local content = file:read("*a")
     file:close()
 

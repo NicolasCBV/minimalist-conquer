@@ -20,6 +20,6 @@ function Draw_weather_icon(cr, status)
     local pos_y = y + (size - icon_size.height) / 2 - icon_size.y_bearing
 
     cairo_move_to(cr, pos_x, pos_y)
-    cairo_show_text(cr, icon) 
+    cairo_show_text(cr, icon)
 end
 

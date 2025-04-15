@@ -12,51 +12,91 @@ function Get_weather_icon(id)
         else
             return ""
         end
-    elseif 801 then
-        if is_day then
-            return "" 
-        else
-            return ""
-        end
-    elseif 802 then
+    elseif id == 801 then
         if is_day then
             return ""
         else
             return ""
         end
-    elseif 803 then 
+    elseif id == 802 then
+        if is_day then
+            return ""
+        else
+            return ""
+        end
+    elseif id == 803 then 
         if is_day then
             return ""
         else
             return ""
         end
-    elseif 804 then
+    elseif id == 804 then
         return ""
-    elseif 200 or 201 or 202 or 210 or 211 or 212 or 221 or 230 or 231 or 232 then
+    elseif id == 200 or 
+        id == 201 or 
+        id == 202 or 
+        id == 210 or 
+        id == 211 or 
+        id == 212 or 
+        id == 221 or 
+        id == 230 or 
+        id == 231 or 
+        id == 232 
+    then
         return ""
-    elseif 300 or 301 or 302 or 310 or 311 or 312 or 313 or 314 or 321 then 
+    elseif id == 300 or 
+        id == 301 or 
+        id == 302 or 
+        id == 310 or 
+        id == 311 or 
+        id == 312 or 
+        id == 313 or 
+        id == 314 or 
+        id == 321 
+    then 
         if is_day then
             return ""
         else 
             return ""
         end
-    elseif 500 then
+    elseif id == 500 then
         return ""
-    elseif 501 then 
+    elseif id == 501 then 
         return ""
-    elseif 502 then 
+    elseif id == 502 then 
         return ""
-    elseif 503 or 520 or 521 then 
+    elseif id == 503 or id == 520 or id == 521 then 
         return ""
-    elseif 504 or 522 or 531 then 
+    elseif id == 504 or id == 522 or id == 531 then 
         return ""
-    elseif 511 then 
+    elseif id == 511 then 
         return ""
-    elseif 600 or 601 or 602 or 611 or 612 or 613 or 615 or 616 or 620 or 621 or 622 then 
+    elseif id == 600 or 
+        id == 601 or 
+        id == 602 or 
+        id == 611 or 
+        id == 612 or 
+        id == 613 or 
+        id == 615 or 
+        id == 616 or 
+        id == 620 or 
+        id == 621 or 
+        id == 622 
+    then 
         return ""
-    elseif 701 or 711 or 721 or 731 or 741 or 751 or 761 or 762 or 771 or 781 then 
+    elseif id == 701 or 
+        id == 711 or 
+        id == 721 or 
+        id == 731 or 
+        id == 741 or 
+        id == 751 or 
+        id == 761 or 
+        id == 762 or 
+        id == 771 or 
+        id == 781 
+    then 
         return ""
     else 
-        return ""
+        return ""
     end
 end

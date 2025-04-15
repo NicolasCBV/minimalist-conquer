@@ -23,9 +23,13 @@ function conky_main()
     local cr = cairo_create(cs)
 
     local weather_data = Get_weather_data()
+    local weather_id = -1
+    if weather_data then
+        weather_id = weather_data.weather[1].id
+    end
 
     Draw_date(cr)
-    Draw_weather_icon(cr, weather_data.weather[1].id)
+    Draw_weather_icon(cr, weather_id)
     Draw_greeting(cr)
     Draw_day(cr)
     Draw_weather_text(cr, weather_data)
