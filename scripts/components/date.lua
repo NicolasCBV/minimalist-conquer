@@ -1,12 +1,12 @@
 function Draw_date(cr)
-    local x = 43
+    local x = 44
     local y = 0
     local size = 80
 
     cairo_set_source_rgba(cr, 0.63, 0.63, 0.70, 0.5)
     cairo_rectangle(cr, x, y, size, size)
     cairo_fill(cr)
- 
+
     cairo_set_source_rgb(cr, 0.13, 0.13, 0.18, 1)
     cairo_select_font_face(cr, "Poppins Light", CAIRO_FONT_SLANT_NORMAL)
     cairo_set_font_size(cr, 50)

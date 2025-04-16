@@ -30,8 +30,8 @@ function conky_main()
 
     Draw_date(cr)
     Draw_weather_icon(cr, weather_id)
-    Draw_greeting(cr)
     Draw_day(cr)
+    Draw_greeting(cr)
     Draw_weather_text(cr, weather_data)
 
     cairo_destroy(cr)

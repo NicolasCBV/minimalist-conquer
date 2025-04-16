@@ -10,6 +10,6 @@ function Draw_day(cr)
     cairo_set_source_rgb(cr, 0.13, 0.13, 0.18, 1)
     cairo_set_font_size(cr, 58)
 
-    cairo_move_to(cr, 43, 150)
+    cairo_move_to(cr, 41, 150)
     cairo_show_text(cr, msg)
 end
