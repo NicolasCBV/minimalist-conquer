@@ -29,7 +29,7 @@ sudo cp $executor_path /usr/bin/weather.collect
 final_executor_path=/usr/bin/weather.collect
 
 crontab -l | grep -v "$final_executor_path" | crontab -
-(crontab -l ; echo "*/15 * * * * $final_executor_path") | crontab
+(crontab -l ; echo "*/15 * * * * $final_executor_path") | sudo crontab
 
 sudo cp $script_dir/scripts/daemon/service.conf /etc/systemd/system/weather-daemon.service
 sudo systemctl daemon-reload
