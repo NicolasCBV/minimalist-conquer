@@ -27,7 +27,11 @@ while true; do
     fi
   fi
 
-  geolocation=($(curl -s ipinfo.io | jq -r '.loc' | tr ',' ' '))
+  geolocation=(
+    $(curl -s https://geoip.kde.org/v1/ubiquity | \
+        xmllint --xpath 'concat(/Response/Latitude, ",", /Response/Longitude)' - | \
+        tr ',' ' ')
+  )
 
   lat="${geolocation[0]}"
   lon="${geolocation[1]}"
